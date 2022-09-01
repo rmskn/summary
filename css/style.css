@@ -3,10 +3,14 @@ body {
 }
 
 .base-block {
+    /*пункты (pt) не используются в реальной вёрстке по моему никогда, используются px*/
+    /*проценты встречаются крайне редко, верстают адаптивно, ссылку я дал в issues.txt*/
     margin-top: 20pt;
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 20pt;
+    /*также можно было написать margin: 20px 20%; в твоём случае*/
+
     padding: 10pt;
     box-shadow: 0 0 10pt rgba(0,0,0,0.5);
 }
@@ -21,6 +25,8 @@ body {
 
 .data-info-block {
     margin-left: 30pt;
+
+    /*это лишнее, блок и так займёт 100% допустимого места по умолчанию*/
     width: max-content;
 }
 
@@ -56,6 +62,8 @@ body {
 
 .table-main tr {
     vertical-align: top;
+
+    /*бордеры кратны пикселям, 1px, 2px и т.д. иначе это будет сильно по разному работать в разных браузерах и устройствах*/
     border-bottom: 0.01em solid #31b19c;
 }
 
@@ -101,6 +109,28 @@ body {
     margin-bottom: 3pt;
 }
 
+/*вижу копипасту с list-head, это плохая практика идентичная плохой практике копипастить программерский код, для этого можно использовать один класс
+общих стилей и потом дополнительно навешивать отличающиеся классы, про это стоит прочитать в БЭМ
+
+в кратце по твоему случаю было бы лучше
+
+.list {
+    list-style-type: none;
+    font-size: 15px;
+
+    text-align: left; -> эта строка лишняя и так работает по умолчанию
+    padding: 0;
+    margin: 0;
+}
+
+.list--marked {
+    list-style-type: disc;
+}
+
+тогда в одном случае будет <ul class="list">...
+а в другом будет <ul class="list list--marked">...
+
+*/
 .list-table-simple {
     list-style-type: none;
     font-size: 15pt;
