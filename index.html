@@ -1,6 +1,8 @@
+<!--пропущен doctype html-->
 <html lang="ru">
 
 <head>
+<!--    отсутствует тег адаптивности, добавил линк в issues.txt-->
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
@@ -11,6 +13,11 @@
     <div class="base-block">
         <div class="data-head-block">
             <div class="data-info-block">
+<!--
+это не параграфы, параграфы используются в статьях, блогах, это div теги почти всегда.
+ такой подход является семантической ошибкой, единственной для чего вообще нужен html
+ ФИО можно взять в h1 заголовок
+ -->
                 <p class="title-main">
                     Тремаскин Кирилл Дмитриевич
                 </p>
@@ -32,6 +39,8 @@
                     </li>
                 </ul>
             </div>
+
+<!--            предпочтительно чуть более универсальное именование photo.png вместо kirill_tremaskin.png-->
             <img class="photo" src="img/kirill_tremaskin.png" alt="Kirill Tremaskin">
         </div>
         <table class="table-main">
@@ -41,6 +50,7 @@
             </colgroup>
             <tr>
                 <td>
+<!--                    параграф не нужен-->
                     <p>
                         Образование
                     </p>
@@ -48,6 +58,10 @@
                 <td>
                     <ul class="list-table-simple">
                         <li>
+<!--                            это не <b>, это div, br тег также используется только для разрывов строки, т.е. это всё - отдельные div,
+которые будут создавать тот же перенос строки, т.к. занимают всю её ширину
+те же комменты касаются и кода ниже про Опыт работы
+-->
                             <b>Программная инженерия</b><br>
                             2018 - 2022<br>
                             Бакалавриат (диплом с отличием)<br>
@@ -82,6 +96,9 @@
                             <p>
                                 Онлайн-магазин на CMS ModX
                             </p>
+
+<!--                            list-table-markered уж очень специфичный класс, по хорошему маркированный лист не должен относится к таблице никак и-->
+<!--                            может использоваться вне её пределов, т.е. это .list просто или .list-marked -->
                             <ul class="list-table-markered">
                                 <li>
                                     Поддержка работоспособности сайта
@@ -191,6 +208,7 @@
                     </p>
                 </td>
                 <td>
+                    <!--                        внешние ссылки через target=_blank-->
                     Github:
                     <a href="https://github.com/rmskn">
                         rmskn
@@ -205,6 +223,7 @@
                 </td>
                 <td>
                     <ul class="list-table-markered">
+<!--                        внешние ссылки через target=_blank-->
                         <li>
                             Telegram:
                             <a href="https://t.me/rmskn">@rmskn</a>
