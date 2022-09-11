@@ -1,30 +1,24 @@
-<!--пропущен doctype html-->
+<!DOCTYPE html>
 <html lang="ru">
-
 <head>
 <!--    отсутствует тег адаптивности, добавил линк в issues.txt-->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <title>Резюме — Тремаскин К. Д.</title>
 </head>
-
 <body>
     <div class="base-block">
         <div class="data-head-block">
             <div class="data-info-block">
-<!--
-это не параграфы, параграфы используются в статьях, блогах, это div теги почти всегда.
- такой подход является семантической ошибкой, единственной для чего вообще нужен html
- ФИО можно взять в h1 заголовок
- -->
-                <p class="title-main">
+                <div class="title-main">
                     Тремаскин Кирилл Дмитриевич
-                </p>
-                <p class="subtitle">
+                </div>
+                <div class="subtitle">
                     Frontend разработчик
-                </p>
-                <ul class="list-head">
+                </div>
+                <ul class="list list--remove--margin">
                     <li>
                         22 года
                     </li>
@@ -39,9 +33,7 @@
                     </li>
                 </ul>
             </div>
-
-<!--            предпочтительно чуть более универсальное именование photo.png вместо kirill_tremaskin.png-->
-            <img class="photo" src="img/kirill_tremaskin.png" alt="Kirill Tremaskin">
+            <img class="photo" src="img/photo.png" alt="Kirill Tremaskin">
         </div>
         <table class="table-main">
             <colgroup>
@@ -50,74 +42,55 @@
             </colgroup>
             <tr>
                 <td>
-<!--                    параграф не нужен-->
-                    <p>
-                        Образование
-                    </p>
+                    Образование
                 </td>
                 <td>
-                    <ul class="list-table-simple">
+                    <ul class="list">
                         <li>
-<!--                            это не <b>, это div, br тег также используется только для разрывов строки, т.е. это всё - отдельные div,
-которые будут создавать тот же перенос строки, т.к. занимают всю её ширину
-те же комменты касаются и кода ниже про Опыт работы
--->
-                            <b>Программная инженерия</b><br>
-                            2018 - 2022<br>
-                            Бакалавриат (диплом с отличием)<br>
-                            Факультет матетматики и информационных технологий<br>
-                            МГУ им. Н.П. Огарёва<br>
-                            Саранск, Республика Мордовия<br>
+                            <div class="bold">Программная инженерия</div>
+                            <div>2018 - 2022</div>
+                            <div>Бакалавриат (диплом с отличием)</div>
+                            <div>Факультет матетматики и информационных технологий</div>
+                            <div>МГУ им. Н.П. Огарёва</div>
+                            <div>Саранск, Республика Мордовия</div>
                         </li>
                         <li>
-                            <b>Программная инженерия</b><br>
-                            2022 - по настоящее время<br>
-                            Магистратура (1 курс)<br>
-                            Факультет матетматики и информационных технологий<br>
-                            МГУ им. Н.П. Огарёва<br>
-                            Саранск, Республика Мордовия
+                            <div class="bold">Программная инженерия</div>
+                            <div>2022 - по настоящее время</div>
+                            <div>Магистратура (1 курс)</div>
+                            <div>Факультет матетматики и информационных технологий</div>
+                            <div>МГУ им. Н.П. Огарёва</div>
+                            <div>Саранск, Республика Мордовия</div>
                         </li>
                     </ul>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <p>
-                        Опыт работы
-                    </p>
+                    Опыт работы
                 </td>
                 <td>
-                    <ul class="list-table-simple">
+                    <ul class="list">
                         <li>
-                            <p>
-                                <b>IT-специалист</b> ООО «Алгоритм М»<br>
-                                январь 2019 - май 2022<br>
-                            </p>
-                            <p>
-                                Онлайн-магазин на CMS ModX
-                            </p>
-
-<!--                            list-table-markered уж очень специфичный класс, по хорошему маркированный лист не должен относится к таблице никак и-->
-<!--                            может использоваться вне её пределов, т.е. это .list просто или .list-marked -->
-                            <ul class="list-table-markered">
+                            <div class="bold">IT-специалист</div>
+                            <div>ООО «Алгоритм М»</div>
+                            <div>январь 2019 - май 2022</div>
+                            <div>Онлайн-магазин на CMS ModX</div>
+                            <ul class="list list--marked" style="margin-top: 5px">
                                 <li>
                                     Поддержка работоспособности сайта
                                 </li>
                                 <li>
-                                    Дополнение функционала сайта (реализация функций корзины и оформления заказов и
-                                    т.п.)
+                                    Дополнение функционала сайта (реализация функций корзины и оформления заказов и т.п.)
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <p>
-                                <b>Backend PHP-разработчик</b> Codemasters LLC<br>
-                                май 2022 - по настоящее время<br>
-                            </p>
-                            <p>
-                                Высоконагруженная система на Laravel
-                            </p>
-                            <ul class="list-table-markered">
+                            <div class="bold">Backend PHP-разработчик</div>
+                            <div>Codemasters LLC</div>
+                            <div>май 2022 - по настоящее время</div>
+                            <div>Высоконагруженная система на Laravel</div>
+                            <ul class="list list--marked" style="margin-top: 5px">
                                 <li>
                                     Оптимизация «тяжелых» SQL запросов
                                 </li>
@@ -128,8 +101,7 @@
                                     Работа над code quality с использованием утилиты phpstan (статический анализ)
                                 </li>
                                 <li>
-                                    Участие в разработке системы документирования проекта с использованием инструмента
-                                    swagger
+                                    Участие в разработке системы документирования проекта с использованием инструмента swagger
                                 </li>
                                 <li>
                                     Поддержка и улучшение текущего функционала
@@ -144,12 +116,10 @@
             </tr>
             <tr>
                 <td>
-                    <p>
-                        Опыт программирования
-                    </p>
+                    Опыт программирования
                 </td>
                 <td>
-                    <ul class="list-table-markered">
+                    <ul class="list list--marked">
                         <li>
                             Успешно завершил курс PHP-разработчик от Codemasters в 2021-2022
                         </li>
@@ -158,27 +128,20 @@
             </tr>
             <tr>
                 <td>
-                    <p>
-                        Уровень английского языка
-                    </p>
+                    Уровень английского языка
                 </td>
                 <td>
-                    <p>
-                        Pre-Intermediate (A2)
-                    </p>
+                    Pre-Intermediate (A2)
                 </td>
             </tr>
             <tr>
                 <td>
-                    <p>
-                        Цель посещения курсов
-                    </p>
+                    Цель посещения курсов
                 </td>
                 <td>
-                    <ul class="list-table-markered">
+                    <ul class="list list--marked">
                         <li>
-                            Желание овладеть современными frontend-технологиями и разобраться в работе популярных
-                            frontend-фреймворков
+                            Желание овладеть современными frontend-технологиями и разобраться в работе популярных frontend-фреймворков
                         </li>
                         <li>
                             Попытка попробовать себя в чем-то новом
@@ -208,37 +171,33 @@
                     </p>
                 </td>
                 <td>
-                    <!--                        внешние ссылки через target=_blank-->
                     Github:
-                    <a href="https://github.com/rmskn">
+                    <a target="_blank" href="https://github.com/rmskn">
                         rmskn
                     </a>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <p>
-                        Контактные данные
-                    </p>
+                    Контактные данные
                 </td>
                 <td>
-                    <ul class="list-table-markered">
-<!--                        внешние ссылки через target=_blank-->
+                    <ul class="list list--marked">
                         <li>
                             Telegram:
-                            <a href="https://t.me/rmskn">@rmskn</a>
+                            <a target="_blank" href="https://t.me/rmskn">@rmskn</a>
                         </li>
                         <li>
                             Skype:
-                            <a href="skype:tremaskir">tremaskir</a>
+                            <a target="_blank" href="skype:tremaskir">tremaskir</a>
                         </li>
                         <li>
                             Мобильный телефон:
-                            <a href="tel:+79969609456">+7 (996) 960-94-56</a>
+                            <a target="_blank" href="tel:+79969609456">+7 (996) 960-94-56</a>
                         </li>
                         <li>
                             Email:
-                            <a href="mailto:tremaskinkd@yandex.ru">tremaskinkd@yandex.ru</a>
+                            <a target="_blank" href="mailto:tremaskinkd@yandex.ru">tremaskinkd@yandex.ru</a>
                         </li>
                     </ul>
                 </td>
